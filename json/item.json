@@ -1,0 +1,72 @@
+{
+    "1000": {
+        name: "TP-LINK Smart Wi-Fi Plug Mini (HS105)",
+        link: "https://www.bestbuy.ca/en-ca/product/tp-link-tp-link-smart-wi-fi-plug-mini-hs105-hs105/10563885.aspx?",
+        web_code: 10563885,
+        price: 25,
+        qty: 1
+    },
+    "1001": {
+        name: "Philips HUE Smart LED Dimmer Kit",
+        link: "https://www.bestbuy.ca/en-ca/product/philips-philips-hue-smart-led-dimmer-kit-458991/10395306.aspx?",
+        web_code: 10395306,
+        price: 50,
+        qty: 1
+    },
+    "1002": {
+        name: "Final Clearance iHome ISS50 5-in-1 Smart Home Monitor",
+        link: "https://www.bestbuy.ca/en-ca/product/ihome-ihome-iss50-5-in-1-smart-home-monitor-iss50wc/10488097.aspx?",
+        web_code: 10488097,
+        price: 30,
+        qty: 1
+    },
+    "1003": {
+        name: "Google Home Mini - Charcoal",
+        link: "https://www.bestbuy.ca/en-ca/product/google-home-mini-charcoal/11615336.aspx?",
+        web_code: 11615336,
+        price: 40,
+        qty: 1
+    },
+    "1004": {
+        name: "Final Clearance Amazon Echo Plus with Alexa - English - White",
+        link: "https://www.bestbuy.ca/en-ca/product/amazon-echo-plus-with-alexa-english-white/11983814.aspx?",
+        web_code: 11983814,
+        price: 200,
+        qty: 1
+    },
+    "1005": {
+        name: "Nest Wi-Fi Smart Learning Thermostat 3rd Generation",
+        link: "https://www.bestbuy.ca/en-ca/product/nest-nest-wi-fi-smart-thermostat-3rd-generation-t3007ef/10389044.aspx?",
+        web_code: 10389044,
+        price: 330,
+        qty: 1
+    },
+    "1006": {
+        name: "New! Cadet 08175 Double-Pole Digital Programmable Thermostat - Online Only",
+        link: "https://www.bestbuy.ca/en-ca/product/cadet-08175-double-pole-digital-programmable-thermostat/11100847.aspx?",
+        web_code: 11100847,
+        price: 138,
+        qty: 1
+    },
+    "1007": {
+        name: "Ring Chime Pro",
+        link: "https://www.bestbuy.ca/en-ca/product/ring-ring-chime-pro-chime-pro/10561653.aspx?",
+        web_code: 10561653,
+        price: 60,
+        qty: 1
+    },
+    "1008": {
+        name: "Ring Wi-Fi Video Doorbell Pro - Bilingual",
+        link: "https://www.bestbuy.ca/en-ca/product/ring-ring-wi-fi-video-doorbell-pro-bilingual-88lp000ch000/10423011.aspx?",
+        web_code: 10423011,
+        price: 300,
+        qty: 1
+    },
+    "1009": {
+        name: "Ring Wi-Fi Video Doorbell 2",
+        link: "https://www.bestbuy.ca/en-ca/product/ring-wi-fi-video-doorbell-2/10739578.aspx?",
+        web_code: 10739578,
+        price: 220,
+        qty: 1
+    }
+}

@@ -1,6 +1,34 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
- 
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+ const styles = theme => ({
+    review_title: {
+        padding: theme.spacing.unit * 5,
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
+    review_subtitle: {
+        padding: theme.spacing.unit * 5,
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
+    search_stars: {
+        padding: theme.spacing.unit * 15,
+        textAlign: 'center'
+    },
+    review_stars_text: {
+        fontSize: 40,
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
+    review_button: {
+        margin: theme.spacing.unit * 10,
+    },
+});
 
 class Review extends React.Component {
   constructor() {
@@ -17,21 +45,35 @@ class Review extends React.Component {
  
   render() {
     const { rating } = this.state;
-    
+            const { classes } = this.props;
+
     return ( 
 
-      <div>
-      <h2>Thank you for using Kwik</h2>
-      <h2>Rate your experience</h2>
-        <StarRatingComponent 
-          name="rate1" 
-          starCount={5}
-          value={rating}
-          onStarClick={this.onStarClick.bind(this)}
-        />
-      </div>
+      <Grid container spacing={16}>
+        <Grid item xs={12}>
+          <Grid container className={classes.review_title} justify="center" spacing={12}>
+              <Typography variant="h4">Thank you for using Kwik</Typography>
+          </Grid>
+          <Grid container className={classes.review_subtitle} justify="center" spacing={12}>
+              <Typography variant="subtitle1">Rate your experience</Typography>
+          </Grid>
+          <Grid container className={classes.review_stars} justify="center" spacing={12}>
+              <StarRatingComponent 
+                name="rate1" 
+                className={classes.review_stars_text}
+                starCount={5}
+                value={rating}
+                onStarClick={this.onStarClick.bind(this)}
+              />
+          </Grid>
+          <Grid container justify="center" spacing={12}>
+            <Button  color="primary" variant="contained" className={classes.review_button}>Rate</Button>
+              </Grid>
+          
+        </Grid>
+      </Grid>
     );
   }
 }
 
-export default Review;
+export default withStyles(styles)(Review);

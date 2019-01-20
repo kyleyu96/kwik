@@ -12,7 +12,7 @@ import Paper from "@material-ui/core/Paper";
 
 const styles = theme => ({
 	container: {
-		marginTop: 80
+		marginTop: 50
 	},
 	paper: {
 		padding: 8 * theme.spacing.unit,

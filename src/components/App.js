@@ -11,7 +11,17 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+// Components
+import Confirmation from "./Confirmation"
 import ETA from "./ETA"
+import Map from "./Map"
+import OutForDeliveryCouriers from "./OutForDeliveryCouriers"
+import OutForDeliveryCustomer from "./OutForDeliveryCustomer"
+import Review from "./Review"
+import Role from "./Role"
+import Search from "./Search"
+import WaitConfirmation from "./WaitConfirmation"
 
 const theme = createMuiTheme({
     palette: {
@@ -77,7 +87,15 @@ class App extends Component {
                             >
                             </Grid>
                             <Route exact path="/" component={HomeContainer} />
+                            <Route exact path="/Confirmation" component={Confirmation} />
                             <Route exact path="/ETA" component={ETA} />
+                            <Route exact path="/Map" component={Map} />
+                            <Route exact path="/OutForDeliveryCouriers" component={OutForDeliveryCouriers} />
+                            <Route exact path="/OutForDeliveryCustomer" component={OutForDeliveryCustomer} />
+                            <Route exact path="/Review" component={Review} />
+                            <Route exact path="/Role" component={Role} />
+                            <Route exact path="/Search" component={Search} />
+                            <Route exact path="/WaitConfirmation" component={WaitConfirmation} />
                         </Fragment>
                     </HashRouter>
                 </MuiThemeProvider>

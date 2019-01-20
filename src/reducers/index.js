@@ -1,14 +1,13 @@
 import { SET_USER } from "../actions";
 
 export const initialState = {
-	bio: "",
-	id: "",
-	name: "",
-	userImg: "",
-	gamesAsMentor: [],
-	gamesAsMentee: [],
-	languages: [],
-	location: ""
+	email: "",
+	first_name: "",
+	last_name: "",
+	address: "",
+	potal_code: "",
+	credit_card: "",
+	phone_number: ""
 };
 
 const user = (state = initialState, action) => {

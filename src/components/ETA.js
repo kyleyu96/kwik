@@ -8,6 +8,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import TextField from '@material-ui/core/TextField';
+import { Link } from 'react-router-dom'
 
 const styles = theme => ({
     eta_title: {
@@ -60,9 +61,9 @@ class ETA extends Component {
                         <Typography variant="h5">Your Tip: CAD 6.05</Typography>
                     </Grid>
                     <Grid container justify="center" spacing={12}>
-                        <a href="#/WaitConfirmation">
+                        <Link to={"/WaitConfirmation"}>
                             <Button  color="primary" variant="contained" className={classes.button}>Confirm</Button>
-                        </a>
+                        </Link>
                     </Grid>
                 </Grid>
             </Grid>

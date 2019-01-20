@@ -3,6 +3,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom'
+
 
 const styles = theme => ({
     wait_confirm_title: {
@@ -45,7 +47,7 @@ class WaitConfirmation extends Component {
                         <Typography variant="p">You can cancel your offer FREE of charge</Typography>
                     </Grid>
                     <Grid container justify="center" spacing={12}>
-                  <Button variant="contained" className={classes.button}>Cancel</Button>
+                  <Link to={'/map'}><Button variant="contained" className={classes.button}>Cancel</Button></Link>
                     </Grid>
                 </Grid>
             </Grid>

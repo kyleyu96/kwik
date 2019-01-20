@@ -10,8 +10,13 @@ const styles = theme => ({
         textAlign: 'center',
         color: theme.palette.text.secondary,
     },
+    search_subtitle: {
+        padding: theme.spacing.unit * 3,
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
     search_icon: {
-        padding: theme.spacing.unit * 15,
+        padding: theme.spacing.unit * 10,
         textAlign: 'center'
     },
     search_button: {
@@ -28,10 +33,16 @@ class Search extends Component {
             <Grid container spacing={16}>
                 <Grid item xs={12}>
                     <Grid container className={classes.search_title} justify="center" spacing={12}>
-                        <Typography variant="h4">Searching For A Delivery Person</Typography>
+                        <Typography variant="h4">Searching For Kwik Delivery</Typography>
+                    </Grid>
+                    <Grid container className={classes.search_subtitle} justify="center" spacing={12}>
+                        <Typography variant="subtitle1">Requests usually take up to 3 minutes to be assigned to Kwik delivery</Typography>
                     </Grid>
                     <Grid container className={classes.search_icon} justify="center" spacing={12}>
-                        <img src={require('../assets/searching.svg')} width="200" />
+                        <img src={require('../assets/searching.gif')} />
+                    </Grid>
+                    <Grid container className={classes.search_subtitle} justify="center" spacing={12}>
+                        <Typography variant="p">You can cancel your request during the search process FREE of charge</Typography>
                     </Grid>
                     <Grid container justify="center" spacing={12}>
                   <Button variant="contained" className={classes.button}>Cancel</Button>

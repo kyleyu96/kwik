@@ -144,7 +144,7 @@ class ReqForm extends Component {
                 <Grid item xs={12} className={classes.button}>
                   <Button
                     variant="contained"
-                    href="#Search"
+                    href="Search"
                     color="primary"
                     fullWidth
                   >

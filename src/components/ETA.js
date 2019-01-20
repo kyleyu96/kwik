@@ -34,6 +34,7 @@ const styles = theme => ({
 class ETA extends Component {
     render() {
         const { classes } = this.props;
+        var tip = (5 + Math.random() * 10).toFixed(2);
 
         return (
             <Grid container spacing={16}>
@@ -82,7 +83,7 @@ class ETA extends Component {
                         justify="center"
                         spacing={16}
                     >
-                        <Typography variant="h5">Your Tip: CAD 6.05</Typography>
+                        <Typography variant="h5">Your Tip: CAD {tip}</Typography>
                     </Grid>
                     <Grid container justify="center" spacing={16}>
                         <Link to={"/WaitConfirmation"}>

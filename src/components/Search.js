@@ -21,8 +21,7 @@ const styles = theme => ({
         textAlign: "center"
     },
     container: {
-        marginTop: 80,
-        minWidth: 690
+        marginTop: 50
     },
     title: {
         marginTop: 6 * theme.spacing.unit
@@ -33,6 +32,12 @@ const styles = theme => ({
 });
 
 class Search extends Component {
+    componentDidMount() {
+        setTimeout(() => {
+            window.location.href = "/Confirmation";
+        }, 15000);
+    }
+
     render() {
         const { classes } = this.props;
 

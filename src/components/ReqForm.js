@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const styles = theme => ({
   container: {
-    marginTop: 2 * theme.spacing.unit
+    marginTop: 50
   },
   title: {
     marginTop: 6 * theme.spacing.unit

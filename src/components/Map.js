@@ -5,7 +5,11 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const MapMarker = ({ }) => (
+    <div>
+        <img src={require('../assets/marker.svg')} width="30" />
+    </div>
+)
 
 const styles = theme => ({
     map_title: {
@@ -34,7 +38,7 @@ class Map extends Component {
       lat: 59.95,
       lng: 30.33
     },
-    zoom: 11
+    zoom: 1
   };
 	render(){
         const { classes } = this.props;
@@ -49,17 +53,15 @@ class Map extends Component {
                         <Typography variant="subtitle1">Deliver packages from stores near you</Typography>
                     </Grid>
                     <Grid container className={classes.map_icon} justify="center" spacing={12}>
-                  <div style={{ height: '60vh', width: '50%' }}>
+                  <div style={{ height: '60vh', width: '80%' }}>
                         <GoogleMapReact
                           bootstrapURLKeys={{ key: 'AIzaSyCIfQy395oDC11dEbwCpyvbVZy7cThZsX4'}}
                           defaultCenter={this.props.center}
                           defaultZoom={this.props.zoom}
                         >
-                          <AnyReactComponent
-                            lat={59.955413}
-                            lng={30.337844}
-                            text="My Marker"
-                          />
+                            <MapMarker lat={59.955413} lng={30.337844}/>
+                            <MapMarker lat={60.954727} lng={33.337844}/>
+                            <MapMarker lat={61.954727} lng={34.337844}/>
                         </GoogleMapReact>
             </div>
                     </Grid>

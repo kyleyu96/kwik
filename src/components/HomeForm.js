@@ -15,7 +15,7 @@ const styles = theme => ({
 		marginTop: 50
 	},
 	paper: {
-		padding: 8 * theme.spacing.unit,
+		padding: 3 * theme.spacing.unit,
 		margin: 2 * theme.spacing.unit
 	},
 	textField: {

@@ -35,7 +35,7 @@ class Search extends Component {
     componentDidMount() {
         setTimeout(() => {
             window.location.href = "/Confirmation";
-        }, 15000);
+        }, 10000);
     }
 
     render() {

@@ -43,7 +43,7 @@ class WaitConfirmation extends Component {
     componentDidMount() {
         setTimeout(() => {
             window.location.href = "/Review";
-        }, 15000);
+        }, 10000);
     }
 
     render() {

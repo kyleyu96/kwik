@@ -34,6 +34,12 @@ const styles = theme => ({
 });
 
 class OutForDeliveryCustomer extends Component {
+    componentDidMount() {
+        setTimeout(() => {
+            window.location.href = "/Review";
+        }, 15000);
+    }
+
     render() {
         const { classes } = this.props;
 

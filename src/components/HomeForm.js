@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -10,6 +10,10 @@ import Button from "@material-ui/core/Button";
 const styles = theme => ({
 	button: {
 		marginTop: theme.spacing.unit * 2
+	},
+	form: {
+		marginTop: theme.spacing.unit * 2,
+		marginBottom: theme.spacing.unit * 2
 	}
 });
 
@@ -38,7 +42,7 @@ class HomeForm extends React.Component {
 		const { classes } = this.props;
 		const { form } = this.state;
 		return (
-			<Fragment>
+			<div className={classes.form}>
 				<AppBar position="static">
 					<Tabs
 						value={form}
@@ -174,7 +178,7 @@ class HomeForm extends React.Component {
 						</Button>
 					</form>
 				)}
-			</Fragment>
+			</div>
 		);
 	}
 }

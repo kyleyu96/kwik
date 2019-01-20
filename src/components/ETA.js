@@ -60,7 +60,9 @@ class ETA extends Component {
                         <Typography variant="h5">Your Tip: CAD 6.05</Typography>
                     </Grid>
                     <Grid container justify="center" spacing={12}>
-                  <Button  color="primary" variant="contained" className={classes.button}>Confirm</Button>
+                        <a href="#/WaitConfirmation">
+                            <Button  color="primary" variant="contained" className={classes.button}>Confirm</Button>
+                        </a>
                     </Grid>
                 </Grid>
             </Grid>

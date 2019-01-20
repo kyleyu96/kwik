@@ -4,12 +4,21 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import GoogleMapReact from 'google-map-react';
+import Popup from "reactjs-popup";
 
-const MapMarker = ({ }) => (
+const MapMarker = ({ text, user }) => {
+    return (
     <div>
-        <img src={require('../assets/marker.svg')} width="30" />
+         <Popup trigger={<img src={require('../assets/marker.svg')} width="30" />} position="right center">
+        <Grid container justify="center" spacing={12}>
+            <Typography variant="p">{text}</Typography>
+        </Grid>
+        <Grid container style={{padding:10}} justify="center" spacing={12}>
+            <a href={"#/eta/" /*+ user*/}><Button color="primary" variant="contained">Proceed</Button></a>
+        </Grid>
+        </Popup>
     </div>
-)
+)}
 
 const styles = theme => ({
     map_title: {
@@ -59,17 +68,18 @@ class Map extends Component {
                           defaultCenter={this.props.center}
                           defaultZoom={this.props.zoom}
                         >
-                            <MapMarker lat={59.955413} lng={30.337844}/>
-                            <MapMarker lat={60.954727} lng={33.337844}/>
-                            <MapMarker lat={61.954727} lng={34.337844}/>
+                            <MapMarker 
+                                text={"Bob is requeting: Google Home Mini, Amazon Echo"}
+                                user="1000"
+                                lat={59.955413} lng={30.337844}
+                            />
+                            <MapMarker text="" lat={60.954727} lng={33.337844}/>
+                            <MapMarker text="" lat={61.954727} lng={34.337844}/>
                         </GoogleMapReact>
             </div>
                     </Grid>
                     <Grid container className={classes.map_subtitle} justify="center" spacing={12}>
                         <Typography variant="p">You can cancel your request during the search process FREE of charge</Typography>
-                    </Grid>
-                    <Grid container justify="center" spacing={12}>
-                  <Button variant="contained" className={classes.button}>Cancel</Button>
                     </Grid>
                 </Grid>
             </Grid>

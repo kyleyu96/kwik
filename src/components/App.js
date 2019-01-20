@@ -13,7 +13,18 @@ const styles = theme => ({
 	grid: {
 		marginTop: theme.spacing.unit * 2,
 		marginBottom: theme.spacing.unit * 2
-	}
+	},
+    kwik_bg: {
+      minHeight: "100%",
+      minWidth: "1024px",
+      width: "100%",
+      height: "auto",
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      zIndex: -1,
+      opacity: 0.06
+    }
 });
 
 class App extends Component {
@@ -22,6 +33,7 @@ class App extends Component {
 		return (
 			<HashRouter>
 				<Fragment>
+            <img className={classes.kwik_bg} src={require('../assets/background.jpg')} />
 					<Grid
 						container
 						direction="column"

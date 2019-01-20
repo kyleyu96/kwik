@@ -40,6 +40,12 @@ const styles = theme => ({
 });
 
 class WaitConfirmation extends Component {
+    componentDidMount() {
+        setTimeout(() => {
+            window.location.href = "/Review";
+        }, 15000);
+    }
+
     render() {
         const { classes } = this.props;
 
@@ -57,7 +63,7 @@ class WaitConfirmation extends Component {
                         <Grid item xs={12}>
                             <Grid
                                 container
-                                className={classes.wait_confirm_title}
+                                className={classes.title}
                                 justify="center"
                                 spacing={16}
                             >

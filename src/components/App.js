@@ -71,7 +71,7 @@ class App extends Component {
                 <MuiThemeProvider theme={theme}>
                     <HashRouter>
                         <Fragment>
-                            <AppBar style={{ background: '#444444' }} position="static">
+                            <AppBar position="static">
                                 <Toolbar>
                                     <Typography variant="h6" color="inherit" className={classes.grow}>
                                         <img src={logo} className={classes.logo} />

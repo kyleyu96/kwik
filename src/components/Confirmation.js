@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
+import OutForDeliveryCustomer from "./OutForDeliveryCustomer";
 
 const styles = theme => ({
     container: {
@@ -13,6 +14,9 @@ const styles = theme => ({
     },
     title: {
         marginTop: 6 * theme.spacing.unit
+    },
+    button: {
+        margin: 2 * theme.spacing.unit
     },
     confirmation_subtitle: {
         padding: theme.spacing.unit * 3,
@@ -23,7 +27,7 @@ const styles = theme => ({
         textAlign: "center"
     },
     confirmation_button: {
-        margin: theme.spacing.unit
+        margin: 2 * theme.spacing.unit
     },
     confirmation_tip: {
         padding: theme.spacing.unit * 4,
@@ -96,22 +100,20 @@ class Confirmation extends Component {
                                         variant="contained"
                                         color="primary"
                                         className={classes.confirmation_button}
+                                        href="/OutForDeliveryCustomer"
                                     >
                                         Accept
                                     </Button>
                                 </Grid>
                                 <Grid item justify="center" spacing={6}>
-                                    <Link to="/search">
-                                        <Button
-                                            variant="contained"
-                                            color="secondary"
-                                            className={
-                                                classes.confirmation_button
-                                            }
-                                        >
-                                            Reject
-                                        </Button>
-                                    </Link>
+                                    <Button
+                                        variant="contained"
+                                        color="secondary"
+                                        className={classes.confirmation_button}
+                                        href="/Search"
+                                    >
+                                        Reject
+                                    </Button>
                                 </Grid>
                             </Grid>
                         </Grid>

@@ -91,7 +91,11 @@ class Search extends Component {
                                 </Typography>
                             </Grid>
                             <Grid item spacing={12} className={classes.button}>
-                                <Button variant="contained" fullWidth>
+                                <Button
+                                    variant="contained"
+                                    fullWidth
+                                    href="/Order"
+                                >
                                     Cancel
                                 </Button>
                             </Grid>

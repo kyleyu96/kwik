@@ -19,7 +19,7 @@ const MapMarker = ({ text, user }) => {
                 position="right center"
             >
                 <Grid container justify="center" spacing={16}>
-                    <Typography variant="p">{text}</Typography>
+                    <Typography style={{padding:'10px'}} variant="p">{text}</Typography>
                 </Grid>
                 <Grid
                     container
@@ -109,17 +109,6 @@ class Map extends Component {
                             )}
                         </GoogleMapReact>
             </div>
-                    </Grid>
-                    <Grid
-                        container
-                        className={classes.map_subtitle}
-                        justify="center"
-                        spacing={16}
-                    >
-                        <Typography variant="p">
-                            You can cancel your request during the search
-                            process FREE of charge
-                        </Typography>
                     </Grid>
                 </Grid>
             </Grid>

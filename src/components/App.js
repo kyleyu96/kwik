@@ -8,7 +8,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 // Components
@@ -67,6 +66,7 @@ class App extends Component {
 		return (
 			<div>
 				<img
+					alt=""
 					className={classes.kwik_bg}
 					src={require("../assets/background.jpg")}
 				/>
@@ -81,6 +81,7 @@ class App extends Component {
 										className={classes.grow}
 									>
 										<img
+											alt=""
 											src={logo}
 											className={classes.logo}
 										/>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -6,7 +7,6 @@ import Tab from "@material-ui/core/Tab";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import history from "../history";
 
 const styles = theme => ({
 	button: {
@@ -29,7 +29,8 @@ class HomeForm extends React.Component {
 		postalCode: "",
 		creditCard: "",
 		phone: "",
-		error: ""
+		error: "",
+		nextPage: false
 	};
 
 	changeTab = (event, value) => {
@@ -41,14 +42,15 @@ class HomeForm extends React.Component {
 	};
 
 	login = e => {
+		e.preventDefault();
 		const { users, setCurrentUser } = this.props;
 		const user = Object.keys(users).find(
 			item => users[item].email === this.state.email
 		);
 		if (user) {
-			if (this.state.password === user.password) {
-				setCurrentUser(user);
-				history.push("/role");
+			if (this.state.password === users[user].password) {
+				setCurrentUser(users[user]);
+				this.setState({ nextPage: true });
 			} else {
 				this.setState({
 					error: "Wrong password!"
@@ -59,10 +61,10 @@ class HomeForm extends React.Component {
 				error: "This email is not registered. Please register first!"
 			});
 		}
-		e.preventDefault();
 	};
 
 	register = e => {
+		e.preventDefault();
 		const { users, addUser, setCurrentUser } = this.props;
 		const user = Object.keys(users).find(
 			item => users[item].email === this.state.email
@@ -86,14 +88,18 @@ class HomeForm extends React.Component {
 			};
 			addUser(id, newUser);
 			setCurrentUser(newUser);
-			history.push("/role");
+			this.setState({ nextPage: true });
 		}
-		e.preventDefault();
 	};
 
 	render() {
 		const { classes } = this.props;
 		const { form, error } = this.state;
+
+		if (this.state.nextPage === true) {
+			return <Redirect to="/role" />;
+		}
+
 		return (
 			<div className={classes.form}>
 				<AppBar position="static">

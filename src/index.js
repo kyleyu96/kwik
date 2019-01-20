@@ -23,7 +23,7 @@ store.subscribe(throttle(() => saveState(cleanState(store.getState()))), 1000);
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Router>
+		<Router history={history}>
 			<App />
 		</Router>
 	</Provider>,

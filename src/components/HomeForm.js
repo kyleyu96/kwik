@@ -6,6 +6,7 @@ import Tab from "@material-ui/core/Tab";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import history from "../history";
 
 const styles = theme => ({
 	button: {
@@ -47,6 +48,7 @@ class HomeForm extends React.Component {
 		if (user) {
 			if (this.state.password === user.password) {
 				setCurrentUser(user);
+				history.push("/role");
 			} else {
 				this.setState({
 					error: "Wrong password!"
@@ -72,7 +74,7 @@ class HomeForm extends React.Component {
 		} else {
 			let id = 0;
 			while (users[id]) id++;
-			addUser(id, {
+			const newUser = {
 				email: this.state.email,
 				password: this.state.password,
 				firstName: this.state.firstName,
@@ -81,7 +83,10 @@ class HomeForm extends React.Component {
 				postalCode: this.state.postalCode,
 				creditCard: this.state.creditCard,
 				phone: this.state.phone
-			});
+			};
+			addUser(id, newUser);
+			setCurrentUser(newUser);
+			history.push("/role");
 		}
 		e.preventDefault();
 	};

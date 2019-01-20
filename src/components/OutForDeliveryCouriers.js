@@ -25,7 +25,7 @@ const styles = theme => ({
 });
 
 
-class OutForDelivery extends Component {
+class OutForDeliveryCouriers extends Component {
 	render(){
         const { classes } = this.props;
 
@@ -33,16 +33,16 @@ class OutForDelivery extends Component {
             <Grid container spacing={16}>
                 <Grid item xs={12}>
                     <Grid container className={classes.out_for_delivery_title} justify="center" spacing={12}>
-                        <Typography variant="h4">Your Package Is On Its Way</Typography>
+                        <Typography variant="h4">Kwik Customer Is Waiting For Their Package</Typography>
                     </Grid>
                     <Grid container className={classes.out_for_delivery_subtitle} justify="center" spacing={12}>
-                        <Typography variant="p">Kwik delivery "Bob" has your package</Typography>
+                        <Typography variant="p">Kwik customer could call you for details about their request</Typography>
                     </Grid>
                     <Grid container className={classes.out_for_delivery_icon} justify="center" spacing={12}>
                         <img src={require('../assets/out-for-delivery.gif')} width="500"/>
                     </Grid>
                     <Grid container className={classes.out_for_delivery_subtitle} justify="center" spacing={12}>
-                        <Typography variant="p">You might be charged a fee by your provider if you call a Kwik driver</Typography>
+                        <Typography variant="p">You might be charged a fee by your provider if you call a Kwik customer</Typography>
                     </Grid>
                     <Grid container justify="center" spacing={12}>
                         <Grid item justify="center" spacing={4}>
@@ -58,4 +58,4 @@ class OutForDelivery extends Component {
 	}
 }
 
-export default withStyles(styles)(OutForDelivery);
+export default withStyles(styles)(OutForDeliveryCouriers);

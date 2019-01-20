@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunkMiddleware from "redux-thunk";
 import throttle from "lodash/throttle";
-import reducer from "./reducers";
+import rootReducer from "./reducers";
 import "./index.css";
 // import AppContainer from "./containers/AppContainer";
 import App from "./components/App";
@@ -14,7 +14,7 @@ import { loadState, cleanState, saveState } from "./scripts/localStorage";
 import registerServiceWorker from "./registerServiceWorker";
 
 const store = createStore(
-	reducer,
+	rootReducer,
 	loadState() ? cleanState(loadState()) : undefined,
 	applyMiddleware(thunkMiddleware)
 );

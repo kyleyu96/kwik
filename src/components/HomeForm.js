@@ -6,6 +6,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import users from "../json/users.json";
 
 const styles = theme => ({
 	button: {
@@ -27,7 +29,8 @@ class HomeForm extends React.Component {
 		address: "",
 		postalCode: "",
 		creditCard: "",
-		phone: ""
+		phone: "",
+		error: ""
 	};
 
 	changeTab = (event, value) => {
@@ -38,9 +41,32 @@ class HomeForm extends React.Component {
 		this.setState({ [prop]: event.target.value });
 	};
 
+	login = e => {
+		const user = Object.keys(users).find(
+			item => users[item].email === this.state.email
+		);
+		if (user) {
+			if (this.state.password === user.password) {
+			} else {
+				this.setState({
+					error: "Wrong password!"
+				});
+			}
+		} else {
+			this.setState({
+				error: "This email is not registered. Please register first!"
+			});
+		}
+		e.preventDefault();
+	};
+
+	register = e => {
+		e.preventDefault();
+	};
+
 	render() {
 		const { classes } = this.props;
-		const { form } = this.state;
+		const { form, error } = this.state;
 		return (
 			<div className={classes.form}>
 				<AppBar position="static">
@@ -54,7 +80,7 @@ class HomeForm extends React.Component {
 					</Tabs>
 				</AppBar>
 				{form === "login" && (
-					<form>
+					<form onSubmit={this.login}>
 						<TextField
 							label="Email"
 							type="email"
@@ -89,7 +115,7 @@ class HomeForm extends React.Component {
 					</form>
 				)}
 				{form === "register" && (
-					<form>
+					<form onSubmit={this.register}>
 						<TextField
 							label="First Name"
 							margin="normal"
@@ -178,6 +204,9 @@ class HomeForm extends React.Component {
 						</Button>
 					</form>
 				)}
+				<Typography color="error" align="center">
+					{error}
+				</Typography>
 			</div>
 		);
 	}

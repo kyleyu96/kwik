@@ -91,7 +91,7 @@ class App extends Component {
 							alignItems="center"
 						/>
 						<Route exact path="/" component={Home} />
-						<Route exact path="/Order" component={ReqForm} />
+						<Route exact path="/reqform" component={ReqForm} />
 						<Route
 							exact
 							path="/Confirmation"

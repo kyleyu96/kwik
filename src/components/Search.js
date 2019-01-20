@@ -1,56 +1,101 @@
 import React, { Fragment, Component } from "react";
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import { withStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
 
 const styles = theme => ({
     search_title: {
-        padding: theme.spacing.unit * 5,
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
+        padding: theme.spacing.unit * 2,
+        textAlign: "center",
+        color: theme.palette.text.secondary
     },
     search_subtitle: {
-        padding: theme.spacing.unit * 3,
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
+        padding: theme.spacing.unit * 2,
+        textAlign: "center",
+        color: theme.palette.text.secondary
     },
     search_icon: {
-        padding: theme.spacing.unit * 10,
-        textAlign: 'center'
+        padding: theme.spacing.unit * 2,
+        textAlign: "center"
     },
-    search_button: {
-        margin: theme.spacing.unit,
+    container: {
+        marginTop: 80,
+        minWidth: 690
     },
+    title: {
+        marginTop: 6 * theme.spacing.unit
+    },
+    button: {
+        margin: 2 * theme.spacing.unit
+    }
 });
 
-
 class Search extends Component {
-	render(){
+    render() {
         const { classes } = this.props;
 
-		return (
-            <Grid container spacing={16}>
-                <Grid item xs={12}>
-                    <Grid container className={classes.search_title} justify="center" spacing={12}>
-                        <Typography variant="h4">Searching For Kwik Delivery</Typography>
+        return (
+            <Grid
+                className={classes.container}
+                container
+                spacing={24}
+                direction="column"
+                alignItems="center"
+                justify="center"
+            >
+                <Paper className={classes.paper}>
+                    <Grid container spacing={16}>
+                        <Grid item xs={12}>
+                            <Grid item xs={12} className={classes.title}>
+                                <Typography
+                                    align="center"
+                                    component="h6"
+                                    variant="headline"
+                                    gutterBottom
+                                >
+                                    Searching For Kwik Delivery
+                                </Typography>
+                            </Grid>
+                            <Grid
+                                item
+                                className={classes.search_subtitle}
+                                spacing={12}
+                            >
+                                <Typography variant="subtitle1">
+                                    Requests usually take up to 3 minutes to be
+                                    assigned to Kwik delivery
+                                </Typography>
+                            </Grid>
+                            <Grid
+                                item
+                                className={classes.search_icon}
+                                spacing={12}
+                            >
+                                <img src={require("../assets/searching.gif")} />
+                            </Grid>
+                            <Grid
+                                item
+                                className={classes.search_subtitle}
+                                spacing={12}
+                            >
+                                <Typography variant="p">
+                                    You can cancel your request during the
+                                    search process FREE of charge
+                                </Typography>
+                            </Grid>
+                            <Grid item spacing={12} className={classes.button}>
+                                <Button variant="contained" fullWidth>
+                                    Cancel
+                                </Button>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                    <Grid container className={classes.search_subtitle} justify="center" spacing={12}>
-                        <Typography variant="subtitle1">Requests usually take up to 3 minutes to be assigned to Kwik delivery</Typography>
-                    </Grid>
-                    <Grid container className={classes.search_icon} justify="center" spacing={12}>
-                        <img src={require('../assets/searching.gif')} />
-                    </Grid>
-                    <Grid container className={classes.search_subtitle} justify="center" spacing={12}>
-                        <Typography variant="p">You can cancel your request during the search process FREE of charge</Typography>
-                    </Grid>
-                    <Grid container justify="center" spacing={12}>
-                  <Button variant="contained" className={classes.button}>Cancel</Button>
-                    </Grid>
-                </Grid>
+                </Paper>
             </Grid>
-        )
-	}
+        );
+    }
 }
 
 export default withStyles(styles)(Search);

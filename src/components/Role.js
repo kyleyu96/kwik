@@ -6,21 +6,13 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
     role_title: {
-        padding: theme.spacing.unit * 5,
+        padding: theme.spacing.unit * 2,
         textAlign: "center",
         color: theme.palette.text.secondary
     },
     role_subtitle: {
-        padding: theme.spacing.unit * 3,
-        textAlign: "center",
+        marginBottom: theme.spacing.unit * 2,
         color: theme.palette.text.secondary
-    },
-    role_icon: {
-        padding: theme.spacing.unit * 3,
-        textAlign: "center"
-    },
-    role_button: {
-        margin: theme.spacing.unit
     }
 });
 
@@ -29,65 +21,54 @@ class Role extends Component {
         const { classes } = this.props;
 
         return (
-            <Grid container spacing={16}>
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+                spacing={16}
+            >
                 <Grid item xs={12}>
-                    <Grid
-                        container
-                        className={classes.role_title}
-                        justify="center"
-                        spacing={12}
-                    >
-                        <Typography variant="h4">Kwik Role</Typography>
-                    </Grid>
-                    <Grid
-                        container
-                        className={classes.role_subtitle}
-                        justify="center"
-                        spacing={12}
-                    >
-                        <Typography variant="subtitle1">
-                            Choose your Kwik role
-                        </Typography>
-                    </Grid>
-                    <Grid
-                        container
-                        className={classes.role_icon}
-                        justify="center"
-                        spacing={12}
-                    >
+                    <Typography variant="h4" className={classes.role_title}>
+                        Kwik Role
+                    </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    <Typography variant="subtitle1">
+                        Choose your Kwik role
+                    </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    <a href="/reqform">
                         <img
                             src={require("../assets/request-person.svg")}
                             maxWidth="200"
                         />
-                    </Grid>
-                    <Grid container justify="center" spacing={12}>
-                        <Typography variant="h5">
-                            I want to request an item
-                        </Typography>
-                    </Grid>
-                    <Grid
-                        container
-                        className={classes.role_icon}
-                        justify="center"
-                        spacing={12}
-                    >
-                        <a href="/map">
-                            <img
-                                src={require("../assets/delivery-person.svg")}
-                                maxWidth="200"
-                            />
-                        </a>
-                    </Grid>
-                    <Grid
-                        container
+                    </a>
+                </Grid>
+                <Grid item xs={12}>
+                    <Typography
+                        variant="subtitle1"
                         className={classes.role_subtitle}
-                        justify="center"
-                        spacing={12}
                     >
-                        <Typography variant="h5">
-                            I want to deliver an item
-                        </Typography>
-                    </Grid>
+                        I want to request an item
+                    </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    <a href="/map">
+                        <img
+                            src={require("../assets/delivery-person.svg")}
+                            maxWidth="200"
+                        />
+                    </a>
+                </Grid>
+                <Grid item xs={12}>
+                    <Typography
+                        variant="subtitle1"
+                        className={classes.role_subtitle}
+                    >
+                        I want to deliver an item
+                    </Typography>
                 </Grid>
             </Grid>
         );

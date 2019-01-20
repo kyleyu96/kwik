@@ -1,61 +1,102 @@
 import React, { Fragment, Component } from "react";
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
     out_for_delivery_title: {
         padding: theme.spacing.unit * 5,
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
+        textAlign: "center",
+        color: theme.palette.text.secondary
     },
     out_for_delivery_subtitle: {
         padding: theme.spacing.unit * 3,
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
+        textAlign: "center",
+        color: theme.palette.text.secondary
     },
     out_for_delivery_icon: {
         padding: theme.spacing.unit * 10,
-        textAlign: 'center'
+        textAlign: "center"
     },
     out_for_delivery_button: {
-        margin: theme.spacing.unit,
-    },
+        margin: theme.spacing.unit
+    }
 });
 
-
 class OutForDeliveryCouriers extends Component {
-	render(){
+    render() {
         const { classes } = this.props;
 
-		return (
+        return (
             <Grid container spacing={16}>
                 <Grid item xs={12}>
-                    <Grid container className={classes.out_for_delivery_title} justify="center" spacing={12}>
-                        <Typography variant="h4">Kwik Customer Is Waiting For Their Package</Typography>
+                    <Grid
+                        container
+                        className={classes.out_for_delivery_title}
+                        justify="center"
+                        spacing={16}
+                    >
+                        <Typography variant="h4">
+                            Kwik Customer Is Waiting For Their Package
+                        </Typography>
                     </Grid>
-                    <Grid container className={classes.out_for_delivery_subtitle} justify="center" spacing={12}>
-                        <Typography variant="p">Kwik customer could call you for details about their request</Typography>
+                    <Grid
+                        container
+                        className={classes.out_for_delivery_subtitle}
+                        justify="center"
+                        spacing={16}
+                    >
+                        <Typography variant="p">
+                            Kwik customer could call you for details about their
+                            request
+                        </Typography>
                     </Grid>
-                    <Grid container className={classes.out_for_delivery_icon} justify="center" spacing={12}>
-                        <img src={require('../assets/out-for-delivery.gif')} width="500"/>
+                    <Grid
+                        container
+                        className={classes.out_for_delivery_icon}
+                        justify="center"
+                        spacing={16}
+                    >
+                        <img
+                            src={require("../assets/out-for-delivery.gif")}
+                            width="500"
+                        />
                     </Grid>
-                    <Grid container className={classes.out_for_delivery_subtitle} justify="center" spacing={12}>
-                        <Typography variant="p">You might be charged a fee by your provider if you call a Kwik customer</Typography>
+                    <Grid
+                        container
+                        className={classes.out_for_delivery_subtitle}
+                        justify="center"
+                        spacing={16}
+                    >
+                        <Typography variant="p">
+                            You might be charged a fee by your provider if you
+                            call a Kwik customer
+                        </Typography>
                     </Grid>
-                    <Grid container justify="center" spacing={12}>
+                    <Grid container justify="center" spacing={16}>
                         <Grid item justify="center" spacing={4}>
-                      <Button variant="contained" color="primary" className={classes.out_for_delivery_button}>Call</Button>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                className={classes.out_for_delivery_button}
+                            >
+                                Call
+                            </Button>
                         </Grid>
                         <Grid item justify="center" spacing={6}>
-                      <Button variant="contained" className={classes.out_for_delivery_button}>Report</Button>
+                            <Button
+                                variant="contained"
+                                className={classes.out_for_delivery_button}
+                            >
+                                Report
+                            </Button>
                         </Grid>
                     </Grid>
                 </Grid>
             </Grid>
-        )
-	}
+        );
+    }
 }
 
 export default withStyles(styles)(OutForDeliveryCouriers);

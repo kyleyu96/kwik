@@ -9,7 +9,6 @@ import rootReducer from "./reducers";
 import "./index.css";
 // import AppContainer from "./containers/AppContainer";
 import App from "./components/App";
-import history from "./history";
 
 import { loadState, cleanState, saveState } from "./scripts/localStorage";
 import registerServiceWorker from "./registerServiceWorker";
@@ -24,7 +23,7 @@ store.subscribe(throttle(() => saveState(cleanState(store.getState()))), 1000);
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Router history={history}>
+		<Router>
 			<App />
 		</Router>
 	</Provider>,

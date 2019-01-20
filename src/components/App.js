@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from "react";
-import { Route, HashRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Home from "./Home";
@@ -8,7 +8,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 // Components
@@ -36,7 +35,9 @@ const theme = createMuiTheme({
 
 const styles = theme => ({
 	logo: {
-		height: "80px"
+		height: "80px",
+		marginTop: theme.spacing.unit,
+		marginBottom: theme.spacing.unit
 	},
 	grid: {
 		marginTop: theme.spacing.unit * 3,
@@ -68,62 +69,55 @@ class App extends Component {
 		return (
 			<div>
 				<img
+					alt=""
 					className={classes.kwik_bg}
 					src={require("../assets/background.jpg")}
 				/>
 				<MuiThemeProvider theme={theme}>
-					<HashRouter>
-						<Fragment>
-							<AppBar position="static">
-								<Toolbar>
-									<Typography
-										variant="h6"
-										color="inherit"
-										className={classes.grow}
-									>
-										<img
-											src={logo}
-											className={classes.logo}
-										/>
-									</Typography>
-									<Button color="inherit">Login</Button>
-								</Toolbar>
-							</AppBar>
-							<Grid
-								container
-								direction="column"
-								justify="flex-start"
-								alignItems="center"
-							/>
-							<Route exact path="/" component={Home} />
-							<Route exact path="/Order" component={ReqForm} />
-							<Route
-								exact
-								path="/Confirmation"
-								component={Confirmation}
-							/>
-							<Route exact path="/ETA" component={ETA} />
-							<Route exact path="/Map" component={Map} />
-							<Route
-								exact
-								path="/OutForDeliveryCouriers"
-								component={OutForDeliveryCouriers}
-							/>
-							<Route
-								exact
-								path="/OutForDeliveryCustomer"
-								component={OutForDeliveryCustomer}
-							/>
-							<Route exact path="/Review" component={Review} />
-							<Route exact path="/Role" component={Role} />
-							<Route exact path="/Search" component={Search} />
-							<Route
-								exact
-								path="/WaitConfirmation"
-								component={WaitConfirmation}
-							/>
-						</Fragment>
-					</HashRouter>
+					<Fragment>
+						<AppBar position="static">
+							<Toolbar>
+								<img
+									alt=""
+									src={logo}
+									className={classes.logo}
+								/>
+							</Toolbar>
+						</AppBar>
+						<Grid
+							container
+							direction="column"
+							justify="flex-start"
+							alignItems="center"
+						/>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/Order" component={ReqForm} />
+						<Route
+							exact
+							path="/Confirmation"
+							component={Confirmation}
+						/>
+						<Route exact path="/ETA" component={ETA} />
+						<Route exact path="/Map" component={Map} />
+						<Route
+							exact
+							path="/OutForDeliveryCouriers"
+							component={OutForDeliveryCouriers}
+						/>
+						<Route
+							exact
+							path="/OutForDeliveryCustomer"
+							component={OutForDeliveryCustomer}
+						/>
+						<Route exact path="/Review" component={Review} />
+						<Route exact path="/Role" component={Role} />
+						<Route exact path="/Search" component={Search} />
+						<Route
+							exact
+							path="/WaitConfirmation"
+							component={WaitConfirmation}
+						/>
+					</Fragment>
 				</MuiThemeProvider>
 			</div>
 		);

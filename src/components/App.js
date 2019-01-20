@@ -35,7 +35,9 @@ const theme = createMuiTheme({
 
 const styles = theme => ({
 	logo: {
-		height: "80px"
+		height: "80px",
+		marginTop: theme.spacing.unit,
+		marginBottom: theme.spacing.unit
 	},
 	grid: {
 		marginTop: theme.spacing.unit * 3,
@@ -75,18 +77,11 @@ class App extends Component {
 					<Fragment>
 						<AppBar position="static">
 							<Toolbar>
-								<Typography
-									variant="h6"
-									color="inherit"
-									className={classes.grow}
-								>
-									<img
-										alt=""
-										src={logo}
-										className={classes.logo}
-									/>
-								</Typography>
-								<Button color="inherit">Login</Button>
+								<img
+									alt=""
+									src={logo}
+									className={classes.logo}
+								/>
 							</Toolbar>
 						</AppBar>
 						<Grid

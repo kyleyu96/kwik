@@ -78,6 +78,7 @@ class HomeForm extends React.Component {
 							color="primary"
 							type="submit"
 							className={classes.button}
+							fullWidth
 						>
 							Start Shopping
 						</Button>
@@ -167,6 +168,7 @@ class HomeForm extends React.Component {
 							color="primary"
 							type="submit"
 							className={classes.button}
+							fullWidth
 						>
 							Register
 						</Button>

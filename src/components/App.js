@@ -3,7 +3,7 @@ import { Route, HashRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import HomeContainer from "../containers/HomeContainer";
+import Home from "./Home";
 import logo from "../assets/logo.png";
 
 const styles = theme => ({
@@ -11,8 +11,8 @@ const styles = theme => ({
 		height: "80px"
 	},
 	grid: {
-		marginTop: theme.spacing.unit * 2,
-		marginBottom: theme.spacing.unit * 2
+		marginTop: theme.spacing.unit * 3,
+		marginBottom: theme.spacing.unit * 3
 	}
 });
 
@@ -32,7 +32,7 @@ class App extends Component {
 							<img src={logo} className={classes.logo} />
 						</Grid>
 					</Grid>
-					<Route exact path="/" component={HomeContainer} />
+					<Route exact path="/" component={Home} />
 				</Fragment>
 			</HashRouter>
 		);

@@ -6,10 +6,25 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
 
 const styles = theme => ({
+	container: {
+		marginTop: 80
+	},
+	paper: {
+		padding: 8 * theme.spacing.unit,
+		margin: 2 * theme.spacing.unit
+	},
+	textField: {
+		margin: 2 * theme.spacing.unit
+	},
+	resize: {
+		minWidth: 500
+	},
 	button: {
-		marginTop: theme.spacing.unit * 2
+		margin: 2 * theme.spacing.unit
 	}
 });
 
@@ -49,131 +64,281 @@ class HomeForm extends React.Component {
 						<Tab label="Register" value="register" />
 					</Tabs>
 				</AppBar>
-				{form === "login" && (
-					<form>
-						<TextField
-							label="Email"
-							type="email"
-							autoComplete="email"
-							margin="normal"
-							variant="outlined"
-							value={this.state.email}
-							onChange={this.handleChange("email")}
-							fullWidth
-							required
-						/>
-						<TextField
-							label="Password"
-							type="password"
-							autoComplete="current-password"
-							margin="normal"
-							variant="outlined"
-							value={this.state.password}
-							onChange={this.handleChange("password")}
-							fullWidth
-							required
-						/>
-						<Button
-							variant="contained"
-							color="primary"
-							type="submit"
-							className={classes.button}
-							fullWidth
-						>
-							Start Shopping
-						</Button>
-					</form>
-				)}
-				{form === "register" && (
-					<form>
-						<TextField
-							label="First Name"
-							margin="normal"
-							variant="outlined"
-							value={this.state.firstName}
-							onChange={this.handleChange("firstName")}
-							fullWidth
-							required
-						/>
-						<TextField
-							label="Last Name"
-							margin="normal"
-							variant="outlined"
-							value={this.state.lastName}
-							onChange={this.handleChange("lastName")}
-							fullWidth
-							required
-						/>
-						<TextField
-							label="Email"
-							type="email"
-							autoComplete="email"
-							margin="normal"
-							variant="outlined"
-							value={this.state.email}
-							onChange={this.handleChange("email")}
-							fullWidth
-							required
-						/>
-						<TextField
-							label="Phone Number"
-							type="tel"
-							margin="normal"
-							variant="outlined"
-							value={this.state.phone}
-							onChange={this.handleChange("phone")}
-							fullWidth
-							required
-						/>
-						<TextField
-							label="Address"
-							margin="normal"
-							variant="outlined"
-							value={this.state.address}
-							onChange={this.handleChange("address")}
-							fullWidth
-							required
-						/>
-						<TextField
-							label="Postal Code"
-							margin="normal"
-							variant="outlined"
-							value={this.state.postalCode}
-							onChange={this.handleChange("postalCode")}
-							fullWidth
-							required
-						/>
-						<TextField
-							label="Password"
-							type="password"
-							autoComplete="current-password"
-							margin="normal"
-							variant="outlined"
-							value={this.state.password}
-							onChange={this.handleChange("password")}
-							fullWidth
-							required
-						/>
-						<TextField
-							label="Credit Card"
-							margin="normal"
-							variant="outlined"
-							value={this.state.creditCard}
-							onChange={this.handleChange("creditCard")}
-							fullWidth
-							required
-						/>
-						<Button
-							variant="contained"
-							color="primary"
-							type="submit"
-							className={classes.button}
-							fullWidth
-						>
-							Register
-						</Button>
-					</form>
-				)}
+				<Grid
+					className={classes.container}
+					container
+					spacing={24}
+					direction="column"
+					alignItems="center"
+					justify="center"
+				>
+					<Paper className={classes.paper}>
+						<form>
+							<Grid
+								container
+								alignItems="stretch"
+								justify="space-around"
+								direction="column"
+							>
+								{form === "login" && (
+									<Fragment>
+										<Grid
+											item
+											xs={12}
+											className={classes.textField}
+										>
+											<TextField
+												label="Email"
+												type="email"
+												autoComplete="email"
+												margin="normal"
+												variant="outlined"
+												value={this.state.email}
+												onChange={this.handleChange(
+													"email"
+												)}
+												required
+												InputProps={{
+													classes: {
+														input: classes.resize
+													}
+												}}
+											/>
+										</Grid>
+										<Grid
+											item
+											xs={12}
+											className={classes.textField}
+										>
+											<TextField
+												label="Password"
+												type="password"
+												autoComplete="current-password"
+												margin="normal"
+												variant="outlined"
+												value={this.state.password}
+												onChange={this.handleChange(
+													"password"
+												)}
+												required
+												InputProps={{
+													classes: {
+														input: classes.resize
+													}
+												}}
+											/>
+										</Grid>
+										<Grid
+											item
+											xs={12}
+											className={classes.button}
+										>
+											<Button
+												variant="contained"
+												fullWidth
+												color="primary"
+												type="submit"
+											>
+												Start Shopping
+											</Button>
+										</Grid>
+									</Fragment>
+								)}
+								{form === "register" && (
+									<Fragment>
+										<Grid
+											item
+											xs={12}
+											className={classes.textField}
+										>
+											<TextField
+												label="First Name"
+												margin="normal"
+												variant="outlined"
+												value={this.state.firstName}
+												onChange={this.handleChange(
+													"firstName"
+												)}
+												required
+												InputProps={{
+													classes: {
+														input: classes.resize
+													}
+												}}
+											/>
+										</Grid>
+										<Grid
+											item
+											xs={12}
+											className={classes.textField}
+										>
+											<TextField
+												label="Last Name"
+												margin="normal"
+												variant="outlined"
+												value={this.state.lastName}
+												onChange={this.handleChange(
+													"lastName"
+												)}
+												required
+												InputProps={{
+													classes: {
+														input: classes.resize
+													}
+												}}
+											/>
+										</Grid>
+										<Grid
+											item
+											xs={12}
+											className={classes.textField}
+										>
+											<TextField
+												label="Email"
+												type="email"
+												autoComplete="email"
+												margin="normal"
+												variant="outlined"
+												value={this.state.email}
+												onChange={this.handleChange(
+													"email"
+												)}
+												required
+												InputProps={{
+													classes: {
+														input: classes.resize
+													}
+												}}
+											/>
+										</Grid>
+										<Grid
+											item
+											xs={12}
+											className={classes.textField}
+										>
+											<TextField
+												label="Phone Number"
+												type="tel"
+												margin="normal"
+												variant="outlined"
+												value={this.state.phone}
+												onChange={this.handleChange(
+													"phone"
+												)}
+												required
+												InputProps={{
+													classes: {
+														input: classes.resize
+													}
+												}}
+											/>
+										</Grid>
+										<Grid
+											item
+											xs={12}
+											className={classes.textField}
+										>
+											<TextField
+												label="Address"
+												margin="normal"
+												variant="outlined"
+												value={this.state.address}
+												onChange={this.handleChange(
+													"address"
+												)}
+												required
+												InputProps={{
+													classes: {
+														input: classes.resize
+													}
+												}}
+											/>
+										</Grid>
+										<Grid
+											item
+											xs={12}
+											className={classes.textField}
+										>
+											<TextField
+												label="Postal Code"
+												margin="normal"
+												variant="outlined"
+												value={this.state.postalCode}
+												onChange={this.handleChange(
+													"postalCode"
+												)}
+												required
+												InputProps={{
+													classes: {
+														input: classes.resize
+													}
+												}}
+											/>
+										</Grid>
+										<Grid
+											item
+											xs={12}
+											className={classes.textField}
+										>
+											<TextField
+												label="Password"
+												type="password"
+												autoComplete="current-password"
+												margin="normal"
+												variant="outlined"
+												value={this.state.password}
+												onChange={this.handleChange(
+													"password"
+												)}
+												required
+												InputProps={{
+													classes: {
+														input: classes.resize
+													}
+												}}
+											/>
+										</Grid>
+										<Grid
+											item
+											xs={12}
+											className={classes.textField}
+										>
+											<TextField
+												label="Credit Card"
+												margin="normal"
+												variant="outlined"
+												value={this.state.creditCard}
+												onChange={this.handleChange(
+													"creditCard"
+												)}
+												required
+												InputProps={{
+													classes: {
+														input: classes.resize
+													}
+												}}
+											/>
+										</Grid>
+										<Grid
+											item
+											xs={12}
+											className={classes.button}
+										>
+											<Button
+												variant="contained"
+												color="primary"
+												type="submit"
+												fullWidth
+											>
+												Register
+											</Button>
+										</Grid>
+									</Fragment>
+								)}
+							</Grid>
+						</form>
+					</Paper>
+				</Grid>
 			</Fragment>
 		);
 	}

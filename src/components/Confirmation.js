@@ -4,12 +4,15 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
+import Paper from "@material-ui/core/Paper";
 
 const styles = theme => ({
-    confirmation_title: {
-        padding: theme.spacing.unit * 5,
-        textAlign: "center",
-        color: theme.palette.text.secondary
+    container: {
+        marginTop: 50,
+        minWidth: 550
+    },
+    title: {
+        marginTop: 6 * theme.spacing.unit
     },
     confirmation_subtitle: {
         padding: theme.spacing.unit * 3,
@@ -17,7 +20,6 @@ const styles = theme => ({
         color: theme.palette.text.secondary
     },
     confirmation_icon: {
-        padding: theme.spacing.unit,
         textAlign: "center"
     },
     confirmation_button: {
@@ -35,72 +37,86 @@ class Confirmation extends Component {
         const { classes } = this.props;
 
         return (
-            <Grid container spacing={16}>
-                <Grid item xs={12}>
-                    <Grid
-                        container
-                        className={classes.confirmation_title}
-                        justify="center"
-                        spacing={12}
-                    >
-                        <Typography variant="h4">
-                            Found A Kwik Delivery
-                        </Typography>
-                    </Grid>
-                    <Grid
-                        container
-                        className={classes.confirmation_subtitle}
-                        justify="center"
-                        spacing={12}
-                    >
-                        <Typography variant="subtitle1">
-                            Match found. Your Kwik Driver is "Bob".
-                        </Typography>
-                    </Grid>
-                    <Grid
-                        container
-                        className={classes.confirmation_icon}
-                        justify="center"
-                        spacing={12}
-                    >
-                        <img
-                            src={require("../assets/checkmark.gif")}
-                            width="500"
-                        />
-                    </Grid>
-                    <Grid
-                        container
-                        className={classes.confirmation_tip}
-                        justify="center"
-                        spacing={12}
-                    >
-                        <Typography variant="h5">
-                            Bob's Tip: CAD 6.05
-                        </Typography>
-                    </Grid>
-                    <Grid container justify="center" spacing={12}>
-                        <Grid item justify="center" spacing={4}>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                className={classes.confirmation_button}
+            <Grid
+                className={classes.container}
+                container
+                spacing={24}
+                direction="column"
+                alignItems="center"
+                justify="center"
+            >
+                <Paper style={{ minWidth: 550 }}>
+                    <Grid container spacing={16}>
+                        <Grid item xs={12}>
+                            <Grid
+                                container
+                                className={classes.title}
+                                justify="center"
+                                spacing={12}
                             >
-                                Accept
-                            </Button>
-                        </Grid>
-                        <Grid item justify="center" spacing={6}>
-                            <Link to="/search">
-                                <Button
-                                    variant="contained"
-                                    color="secondary"
-                                    className={classes.confirmation_button}
-                                >
-                                    Reject
-                                </Button>
-                            </Link>
+                                <Typography variant="h6">
+                                    Found A Kwik Delivery
+                                </Typography>
+                            </Grid>
+                            <Grid
+                                container
+                                className={classes.confirmation_subtitle}
+                                justify="center"
+                                spacing={12}
+                            >
+                                <Typography variant="subtitle1">
+                                    Match found. Your Kwik Driver is "Bob".
+                                </Typography>
+                            </Grid>
+                            <Grid
+                                container
+                                className={classes.confirmation_icon}
+                                justify="center"
+                                spacing={12}
+                            >
+                                <img
+                                    src={require("../assets/checkmark.gif")}
+                                    width="150"
+                                    height="150"
+                                />
+                            </Grid>
+                            <Grid
+                                container
+                                className={classes.confirmation_tip}
+                                justify="center"
+                                spacing={12}
+                            >
+                                <Typography variant="h6">
+                                    Trip fare: CAD 6.05
+                                </Typography>
+                            </Grid>
+                            <Grid container justify="center" spacing={12}>
+                                <Grid item justify="center" spacing={4}>
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        className={classes.confirmation_button}
+                                    >
+                                        Accept
+                                    </Button>
+                                </Grid>
+                                <Grid item justify="center" spacing={6}>
+                                    <Link to="/search">
+                                        <Button
+                                            variant="contained"
+                                            color="secondary"
+                                            className={
+                                                classes.confirmation_button
+                                            }
+                                        >
+                                            Reject
+                                        </Button>
+                                    </Link>
+                                </Grid>
+                            </Grid>
                         </Grid>
                     </Grid>
-                </Grid>
+                </Paper>
             </Grid>
         );
     }

@@ -7,17 +7,17 @@ import Button from "@material-ui/core/Button";
 
 const styles = theme => ({
   review_title: {
-    padding: theme.spacing.unit * 5,
+    padding: theme.spacing.unit * 3,
     textAlign: "center",
     color: theme.palette.text.secondary
   },
   review_subtitle: {
-    padding: theme.spacing.unit * 5,
+    padding: theme.spacing.unit * 3,
     textAlign: "center",
     color: theme.palette.text.secondary
   },
   search_stars: {
-    padding: theme.spacing.unit * 15,
+    padding: theme.spacing.unit * 8,
     textAlign: "center"
   },
   review_stars_text: {
@@ -26,7 +26,7 @@ const styles = theme => ({
     color: theme.palette.text.secondary
   },
   review_button: {
-    margin: theme.spacing.unit * 10
+    margin: theme.spacing.unit * 5
   }
 });
 
@@ -56,7 +56,7 @@ class Review extends React.Component {
             justify="center"
             spacing={16}
           >
-            <Typography variant="h4">Thank you for using Kwik</Typography>
+            <Typography variant="h4">Thank you for using Kwik!</Typography>
           </Grid>
           <Grid
             container

@@ -6,6 +6,8 @@ import { withStyles } from '@material-ui/core/styles';
 import GoogleMapReact from 'google-map-react';
 import Popup from "reactjs-popup";
 import { Link } from 'react-router-dom'
+import orders from "../json/orders.json"
+import users from "../json/users.json"
 
 const MapMarker = ({ text, user }) => {
     return (
@@ -45,10 +47,10 @@ const styles = theme => ({
 class Map extends Component {
     static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 45.504574,
+      lng: -73.614550
     },
-    zoom: 1
+    zoom: 12
   };
 	render(){
         const { classes } = this.props;
@@ -69,13 +71,16 @@ class Map extends Component {
                           defaultCenter={this.props.center}
                           defaultZoom={this.props.zoom}
                         >
+            {Object.keys(orders).map(key =>
+                               (
                             <MapMarker 
-                                text={"Bob is requeting: Google Home Mini, Amazon Echo"}
+                                text={users[orders[key].user_req].firstName + " is requeting:" + orders[key].items}
                                 user="1000"
-                                lat={59.955413} lng={30.337844}
+                                lat={users[orders[key].user_req].lo} 
+                                lng={users[orders[key].user_req].la}
                             />
-                            <MapMarker text="" lat={60.954727} lng={33.337844}/>
-                            <MapMarker text="" lat={61.954727} lng={34.337844}/>
+                                )
+                            )}
                         </GoogleMapReact>
             </div>
                     </Grid>

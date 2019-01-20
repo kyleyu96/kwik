@@ -4,8 +4,21 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import GoogleMapReact from 'google-map-react';
+import Popup from "reactjs-popup";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const MapMarker = ({ text, user }) => {
+    return (
+    <div>
+         <Popup trigger={<img src={require('../assets/marker.svg')} width="30" />} position="right center">
+        <Grid container justify="center" spacing={12}>
+            <Typography variant="p">{text}</Typography>
+        </Grid>
+        <Grid container style={{padding:10}} justify="center" spacing={12}>
+            <a href={"#/eta/" /*+ user*/}><Button color="primary" variant="contained">Proceed</Button></a>
+        </Grid>
+        </Popup>
+    </div>
+)}
 
 const styles = theme => ({
     map_title: {
@@ -34,7 +47,7 @@ class Map extends Component {
       lat: 59.95,
       lng: 30.33
     },
-    zoom: 11
+    zoom: 1
   };
 	render(){
         const { classes } = this.props;
@@ -49,25 +62,24 @@ class Map extends Component {
                         <Typography variant="subtitle1">Deliver packages from stores near you</Typography>
                     </Grid>
                     <Grid container className={classes.map_icon} justify="center" spacing={12}>
-                  <div style={{ height: '60vh', width: '50%' }}>
+                  <div style={{ height: '60vh', width: '80%' }}>
                         <GoogleMapReact
                           bootstrapURLKeys={{ key: 'AIzaSyCIfQy395oDC11dEbwCpyvbVZy7cThZsX4'}}
                           defaultCenter={this.props.center}
                           defaultZoom={this.props.zoom}
                         >
-                          <AnyReactComponent
-                            lat={59.955413}
-                            lng={30.337844}
-                            text="My Marker"
-                          />
+                            <MapMarker 
+                                text={"Bob is requeting: Google Home Mini, Amazon Echo"}
+                                user="1000"
+                                lat={59.955413} lng={30.337844}
+                            />
+                            <MapMarker text="" lat={60.954727} lng={33.337844}/>
+                            <MapMarker text="" lat={61.954727} lng={34.337844}/>
                         </GoogleMapReact>
             </div>
                     </Grid>
                     <Grid container className={classes.map_subtitle} justify="center" spacing={12}>
                         <Typography variant="p">You can cancel your request during the search process FREE of charge</Typography>
-                    </Grid>
-                    <Grid container justify="center" spacing={12}>
-                  <Button variant="contained" className={classes.button}>Cancel</Button>
                     </Grid>
                 </Grid>
             </Grid>

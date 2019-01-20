@@ -63,7 +63,7 @@ class HomeForm extends React.Component {
 	};
 
 	register = e => {
-		const { users, addUser } = this.props;
+		const { users, addUser, setCurrentUser } = this.props;
 		const user = Object.keys(users).find(
 			item => users[item].email === this.state.email
 		);

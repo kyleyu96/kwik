@@ -9,6 +9,7 @@ import rootReducer from "./reducers";
 import "./index.css";
 // import AppContainer from "./containers/AppContainer";
 import App from "./components/App";
+import history from "./history";
 
 import { loadState, cleanState, saveState } from "./scripts/localStorage";
 import registerServiceWorker from "./registerServiceWorker";

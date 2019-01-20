@@ -1,6 +1,5 @@
 import React, { Fragment, Component } from "react";
 import { Route, HashRouter } from "react-router-dom";
-import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Home from "./Home";
@@ -128,9 +127,5 @@ class App extends Component {
 		);
 	}
 }
-
-App.propTypes = {
-	classes: PropTypes.object.isRequired
-};
 
 export default withStyles(styles)(App);

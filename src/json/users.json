@@ -1,52 +1,56 @@
 {
-	"2010":{
+	"2010": {
 		"email": "irene.zhang@icloud.com",
-		"first_name": "irene",
-		"last_name": "zhang",
+		"firstName": "irene",
+		"lastName": "zhang",
 		"address": "3600 av du parc, montreal, QC, Canada",
-		"potal_code": "H2X 2J1",
-		"credit_card":"000000000000",
-		"phone_number": "514000000"
-
+		"postalCode": "H2X 2J1",
+		"creditCard": "000000000000",
+		"phone": "514000000",
+		"password": "12345"
 	},
 
-	"2011":{
+	"2011": {
 		"email": "amy.smith@icloud.com",
-		"first_name": "amy",
-		"last_name": "smith",
+		"firstName": "amy",
+		"lastName": "smith",
 		"address": "111 Wellington St, Ottawa, ON, Canada",
-		"potal_code": "ON K1A",
-		"credit_card":"000000000001",
-		"phone_number": "514000001"
+		"postalCode": "ON K1A",
+		"creditCard": "000000000001",
+		"phone": "514000001",
+		"password": "12345"
 	},
 
-	"2012":{
+	"2012": {
 		"email": "john.doe@icloud.com",
-		"first_name": "john",
-		"last_name": "doe",
+		"firstName": "john",
+		"lastName": "doe",
 		"address": "650 Bay St, Toronto, ON, Canada",
-		"potal_code": "M5G 1M8",
-		"credit_card":"000000000002",
-		"phone_number": "905000002"
+		"postalCode": "M5G 1M8",
+		"creditCard": "000000000002",
+		"phone": "905000002",
+		"password": "12345"
 	},
 
-	"2013":{
+	"2013": {
 		"email": "lily.jiang@icloud.com",
-		"first_name": "lily",
-		"last_name": "jiang",
+		"firstName": "lily",
+		"lastName": "jiang",
 		"address": "2900 Edouard Montpetit Blvd, montreal, QC, Canada",
-		"potal_code": "H3T 1J4",
-		"credit_card":"000000000003",
-		"phone_number": "905000003"
+		"postalCode": "H3T 1J4",
+		"creditCard": "000000000003",
+		"phone": "905000003",
+		"password": "12345"
 	},
 
-	"2014":{
+	"2014": {
 		"email": "kate.li@icloud.com",
-		"first_name": "kate",
-		"last_name": "li",
+		"firstName": "kate",
+		"lastName": "li",
 		"address": "3460 rue peel, montreal, QC, Canada",
-		"potal_code": "H3A 2M1",
-		"credit_card":"000000000004",
-		"phone_number": "905000004"
+		"postalCode": "H3A 2M1",
+		"creditCard": "000000000004",
+		"phone": "905000004",
+		"password": "12345"
 	}
 }

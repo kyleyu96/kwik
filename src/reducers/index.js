@@ -25,7 +25,7 @@ function database(state = initialState, action) {
 			});
 		case SET_CURRENT_USER:
 			return Object.assign({}, state, {
-				currentUser: users[action.id]
+				currentUser: action.user
 			});
 		default:
 			return state;

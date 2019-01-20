@@ -9,9 +9,9 @@ export function addUser(id, userInfo) {
   };
 }
 
-export function setCurrentUser(id, userInfo) {
+export function setCurrentUser(user) {
   return {
     type: SET_CURRENT_USER,
-    id
+    user
   };
 }

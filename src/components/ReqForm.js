@@ -12,11 +12,10 @@ import { Link } from "react-router-dom";
 
 const styles = theme => ({
   container: {
-    marginTop: 120
+    marginTop: 2 * theme.spacing.unit
   },
-  paper: {
-    padding: 2 * theme.spacing.unit,
-    margin: 2 * theme.spacing.unit
+  title: {
+    marginTop: 6 * theme.spacing.unit
   },
   textField: {
     margin: 2 * theme.spacing.unit
@@ -26,6 +25,9 @@ const styles = theme => ({
     marginRight: 2 * theme.spacing.unit,
     marginTop: 1 * theme.spacing.unit,
     marginBottom: 1 * theme.spacing.unit
+  },
+  paper: {
+    // minWidth: 690
   }
 });
 
@@ -98,17 +100,15 @@ class ReqForm extends Component {
                 justify="space-around"
                 direction="column"
               >
-                <Grid item xs={12}>
-                  <Paper className={classes.paper}>
-                    <Typography
-                      align="center"
-                      component="h6"
-                      variant="headline"
-                      gutterBottom
-                    >
-                      Make an order
-                    </Typography>
-                  </Paper>
+                <Grid item xs={12} className={classes.title}>
+                  <Typography
+                    align="center"
+                    component="h6"
+                    variant="headline"
+                    gutterBottom
+                  >
+                    Make an order
+                  </Typography>
                 </Grid>
                 <Grid item xs={12} className={classes.textField}>
                   <TextField
@@ -144,7 +144,7 @@ class ReqForm extends Component {
                 <Grid item xs={12} className={classes.button}>
                   <Button
                     variant="contained"
-                    href="#Search"
+                    href="Search"
                     color="primary"
                     fullWidth
                   >

@@ -70,17 +70,17 @@ class HomeForm extends React.Component {
 				error: "This email is already registered!"
 			});
 		} else {
-			let i = 0;
-			while (users[i]) i++;
+			let id = 0;
+			while (users[id]) id++;
 			addUser(id, {
-				email: this.state[email],
-				password: this.state[password],
-				firstName: this.state[firstName],
-				lastName: this.state[lastName],
-				address: this.state[address],
-				postalCode: this.state[postalCode],
-				creditCard: this.state[creditCard],
-				phone: this.state[phone]
+				email: this.state.email,
+				password: this.state.password,
+				firstName: this.state.firstName,
+				lastName: this.state.lastName,
+				address: this.state.address,
+				postalCode: this.state.postalCode,
+				creditCard: this.state.creditCard,
+				phone: this.state.phone
 			});
 		}
 		e.preventDefault();

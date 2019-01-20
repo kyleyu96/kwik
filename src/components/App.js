@@ -51,7 +51,7 @@ const styles = theme => ({
       top: 0,
       left: 0,
       zIndex: -1,
-      opacity: 0.06
+      opacity: 0.03
     },
     grow: {
         flexGrow: 1,

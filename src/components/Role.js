@@ -39,13 +39,13 @@ class Role extends Component {
                         <Typography variant="subtitle1">Choose your Kwik role</Typography>
                     </Grid>
                     <Grid container className={classes.role_icon} justify="center" spacing={12}>
-                        <img src={require('../assets/request-person.svg')} width="250" />
+                        <img src={require('../assets/request-person.svg')} width="200" />
                     </Grid>
                     <Grid container justify="center" spacing={12}>
                         <Typography variant="h5">I want to request an item</Typography>
                     </Grid>
                     <Grid container className={classes.role_icon} justify="center" spacing={12}>
-                        <img src={require('../assets/delivery-person.svg')} width="250" />
+                        <a href="#/map"><img src={require('../assets/delivery-person.svg')} width="200" /></a>
                     </Grid>
                     <Grid container className={classes.role_subtitle} justify="center" spacing={12}>
                         <Typography variant="h5">I want to deliver an item</Typography>

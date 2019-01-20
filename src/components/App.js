@@ -22,6 +22,7 @@ import Review from "./Review";
 import Role from "./Role";
 import Search from "./Search";
 import WaitConfirmation from "./WaitConfirmation";
+import ReqForm from "./ReqForm";
 
 const theme = createMuiTheme({
 	palette: {
@@ -96,6 +97,7 @@ class App extends Component {
 								alignItems="center"
 							/>
 							<Route exact path="/" component={Home} />
+							<Route exact path="/Order" component={ReqForm} />
 							<Route
 								exact
 								path="/Confirmation"

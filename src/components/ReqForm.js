@@ -2,12 +2,13 @@ import React, { Component, Fragment } from "react";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import Item from "./Item";
-
+import { Redirect } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   container: {
@@ -143,11 +144,11 @@ class ReqForm extends Component {
                 <Grid item xs={12} className={classes.button}>
                   <Button
                     variant="contained"
+                    href="#Search"
                     color="primary"
                     fullWidth
-                    onClick={this.addTextField}
                   >
-                    Submit my order
+                    Submit order
                   </Button>
                 </Grid>
               </Grid>

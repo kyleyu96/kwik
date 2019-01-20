@@ -5,9 +5,10 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import GoogleMapReact from "google-map-react";
 import Popup from "reactjs-popup";
-import orders from "../json/orders.json"
-import users from "../json/users.json"
+import orders from "../json/orders.json";
+import users from "../json/users.json";
 import { Link } from "react-router-dom";
+import items from "../json/items.json";
 
 const MapMarker = ({ text, user }) => {
     return (
@@ -19,7 +20,9 @@ const MapMarker = ({ text, user }) => {
                 position="right center"
             >
                 <Grid container justify="center" spacing={16}>
-                    <Typography style={{padding:'10px'}} variant="p">{text}</Typography>
+                    <Typography style={{ padding: "10px" }} variant="p">
+                        {text}
+                    </Typography>
                 </Grid>
                 <Grid
                     container
@@ -60,13 +63,13 @@ const styles = theme => ({
 
 class Map extends Component {
     static defaultProps = {
-    center: {
-      lat: 45.504574,
-      lng: -73.614550
-    },
-    zoom: 12
-  };
-	render(){
+        center: {
+            lat: 45.504574,
+            lng: -73.61455
+        },
+        zoom: 12
+    };
+    render() {
         const { classes } = this.props;
 
         return (
@@ -90,25 +93,36 @@ class Map extends Component {
                             Deliver packages from stores near you
                         </Typography>
                     </Grid>
-                    <Grid container className={classes.map_icon} justify="center" spacing={12}>
-                  <div style={{ height: '60vh', width: '80%' }}>
-                        <GoogleMapReact
-                          bootstrapURLKeys={{ key: 'AIzaSyCIfQy395oDC11dEbwCpyvbVZy7cThZsX4'}}
-                          defaultCenter={this.props.center}
-                          defaultZoom={this.props.zoom}
-                        >
-            {Object.keys(orders).map(key =>
-                               (
-                            <MapMarker 
-                                text={users[orders[key].user_req].firstName + " is requeting:" + orders[key].items}
-                                user="1000"
-                                lat={users[orders[key].user_req].lo} 
-                                lng={users[orders[key].user_req].la}
-                            />
-                                )
-                            )}
-                        </GoogleMapReact>
-            </div>
+                    <Grid
+                        container
+                        className={classes.map_icon}
+                        justify="center"
+                        spacing={12}
+                    >
+                        <div style={{ height: "60vh", width: "80%" }}>
+                            <GoogleMapReact
+                                bootstrapURLKeys={{
+                                    key:
+                                        "AIzaSyCIfQy395oDC11dEbwCpyvbVZy7cThZsX4"
+                                }}
+                                defaultCenter={this.props.center}
+                                defaultZoom={this.props.zoom}
+                            >
+                                {Object.keys(orders).map(key => (
+                                    <MapMarker
+                                        text={`${
+                                            users[orders[key].user_req]
+                                                .firstName
+                                        } is requeting: ${orders[key].items
+                                            .map(item => items[item].name)
+                                            .join(", ")}`}
+                                        user="1000"
+                                        lat={users[orders[key].user_req].lo}
+                                        lng={users[orders[key].user_req].la}
+                                    />
+                                ))}
+                            </GoogleMapReact>
+                        </div>
                     </Grid>
                 </Grid>
             </Grid>

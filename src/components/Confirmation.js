@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom'
 
 const styles = theme => ({
     confirmation_title: {
@@ -54,7 +55,9 @@ class Confirmation extends Component {
                       <Button variant="contained" color="primary" className={classes.confirmation_button}>Accept</Button>
                         </Grid>
                         <Grid item justify="center" spacing={6}>
-                      <Button variant="contained" color="secondary" className={classes.confirmation_button}>Reject</Button>
+                            <Link to="/search">
+                                <Button variant="contained" color="secondary" className={classes.confirmation_button}>Reject</Button>
+                            </Link>
                         </Grid>
                     </Grid>
                 </Grid>

@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import GoogleMapReact from 'google-map-react';
 import Popup from "reactjs-popup";
+import { Link } from 'react-router-dom'
 
 const MapMarker = ({ text, user }) => {
     return (
@@ -14,7 +15,7 @@ const MapMarker = ({ text, user }) => {
             <Typography variant="p">{text}</Typography>
         </Grid>
         <Grid container style={{padding:10}} justify="center" spacing={12}>
-            <a href={"#/eta/" /*+ user*/}><Button color="primary" variant="contained">Proceed</Button></a>
+            <Link to={"/eta/" /*+ user*/}><Button color="primary" variant="contained">Proceed</Button></Link>
         </Grid>
         </Popup>
     </div>

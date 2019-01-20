@@ -4,7 +4,7 @@ import items from "../json/items.json";
 import orders from "../json/orders.json";
 import stores from "../json/stores.json";
 
-import { ADD_USER, SET_CURRENT_USER } from "./actions";
+import { ADD_USER, SET_CURRENT_USER } from "../actions";
 
 export const initialState = {
 	users,
@@ -26,19 +26,6 @@ function database(state = initialState, action) {
 		case SET_CURRENT_USER:
 			return Object.assign({}, state, {
 				currentUser: action.user
-			});
-		default:
-			return state;
-	}
-}
-
-function postsBySubreddit(state = {}, action) {
-	switch (action.type) {
-		case INVALIDATE_SUBREDDIT:
-		case RECEIVE_POSTS:
-		case REQUEST_POSTS:
-			return Object.assign({}, state, {
-				[action.subreddit]: posts(state[action.subreddit], action)
 			});
 		default:
 			return state;

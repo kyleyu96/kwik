@@ -9,6 +9,7 @@ import orders from "../json/orders.json";
 import users from "../json/users.json";
 import { Link } from "react-router-dom";
 import items from "../json/items.json";
+import Paper from "@material-ui/core/Paper";
 
 const MapMarker = ({ text, user }) => {
     return (
@@ -43,7 +44,7 @@ const MapMarker = ({ text, user }) => {
 
 const styles = theme => ({
     map_title: {
-        padding: theme.spacing.unit * 5,
+        padding: theme.spacing.unit * 3,
         textAlign: "center",
         color: theme.palette.text.secondary
     },
@@ -53,11 +54,20 @@ const styles = theme => ({
         color: theme.palette.text.secondary
     },
     map_icon: {
-        padding: theme.spacing.unit * 5,
+        padding: theme.spacing.unit * 3,
         textAlign: "center"
     },
     map_button: {
         margin: theme.spacing.unit
+    },
+    container: {
+        marginTop: 50
+    },
+    title: {
+        marginTop: 3 * theme.spacing.unit
+    },
+    button: {
+        margin: 2 * theme.spacing.unit
     }
 });
 
@@ -73,58 +83,81 @@ class Map extends Component {
         const { classes } = this.props;
 
         return (
-            <Grid container spacing={16}>
-                <Grid item xs={12}>
-                    <Grid
-                        container
-                        className={classes.map_title}
-                        justify="center"
-                        spacing={16}
-                    >
-                        <Typography variant="h4">Kwik Customer Map</Typography>
-                    </Grid>
-                    <Grid
-                        container
-                        className={classes.map_subtitle}
-                        justify="center"
-                        spacing={16}
-                    >
-                        <Typography variant="subtitle1">
-                            Deliver packages from stores near you
-                        </Typography>
-                    </Grid>
-                    <Grid
-                        container
-                        className={classes.map_icon}
-                        justify="center"
-                        spacing={12}
-                    >
-                        <div style={{ height: "60vh", width: "80%" }}>
-                            <GoogleMapReact
-                                bootstrapURLKeys={{
-                                    key:
-                                        "AIzaSyCIfQy395oDC11dEbwCpyvbVZy7cThZsX4"
-                                }}
-                                defaultCenter={this.props.center}
-                                defaultZoom={this.props.zoom}
+            <Grid
+                className={classes.container}
+                container
+                spacing={8}
+                direction="column"
+                alignItems="center"
+                justify="center"
+            >
+                <Paper className={classes.paper} style={{ minWidth: 550 }}>
+                    <Grid container spacing={16}>
+                        <Grid item xs={12}>
+                            <Grid
+                                container
+                                className={classes.title}
+                                justify="center"
+                                spacing={8}
                             >
-                                {Object.keys(orders).map(key => (
-                                    <MapMarker
-                                        text={`${
-                                            users[orders[key].user_req]
-                                                .firstName
-                                        } is requeting: ${orders[key].items
-                                            .map(item => items[item].name)
-                                            .join(", ")}`}
-                                        user="1000"
-                                        lat={users[orders[key].user_req].lo}
-                                        lng={users[orders[key].user_req].la}
-                                    />
-                                ))}
-                            </GoogleMapReact>
-                        </div>
+                                <Typography variant="h6">
+                                    Kwik Customer Map
+                                </Typography>
+                            </Grid>
+                            <Grid
+                                container
+                                className={classes.title}
+                                justify="center"
+                                spacing={16}
+                            >
+                                <Typography variant="subtitle1">
+                                    Deliver packages from stores near you
+                                </Typography>
+                            </Grid>
+                            <Grid
+                                container
+                                className={classes.map_icon}
+                                justify="center"
+                                spacing={12}
+                            >
+                                <div style={{ height: "60vh", width: "90%" }}>
+                                    <GoogleMapReact
+                                        bootstrapURLKeys={{
+                                            key:
+                                                "AIzaSyCIfQy395oDC11dEbwCpyvbVZy7cThZsX4"
+                                        }}
+                                        defaultCenter={this.props.center}
+                                        defaultZoom={this.props.zoom}
+                                    >
+                                        {Object.keys(orders).map(key => (
+                                            <MapMarker
+                                                text={`${
+                                                    users[orders[key].user_req]
+                                                        .firstName
+                                                } is requeting: ${orders[
+                                                    key
+                                                ].items
+                                                    .map(
+                                                        item => items[item].name
+                                                    )
+                                                    .join(", ")}`}
+                                                user="1000"
+                                                lat={
+                                                    users[orders[key].user_req]
+                                                        .lo
+                                                }
+                                                lng={
+                                                    users[orders[key].user_req]
+                                                        .la
+                                                }
+                                            />
+                                        ))}
+                                    </GoogleMapReact>
+                                </div>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </Paper>
             </Grid>
         );
     }

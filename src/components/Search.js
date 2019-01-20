@@ -50,7 +50,7 @@ class Search extends Component {
                 alignItems="center"
                 justify="center"
             >
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} style={{ minWidth: 550 }}>
                     <Grid container spacing={16}>
                         <Grid item xs={12}>
                             <Grid item xs={12} className={classes.title}>
